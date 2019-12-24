@@ -1,0 +1,26 @@
+<form>
+  <mat-form-field appearance="legacy">
+    <mat-label>{{label}}</mat-label>
+    <input
+      #input
+      matInput
+      id="search_field"
+      autocomplete="off"
+      [placeholder]="placeholder"
+
+      (input)="searchPhraseChanged(input.value)">
+
+    <mat-icon
+      *ngIf="input.value"
+      matSuffix
+      color="primary"
+      matTooltip="clear search"
+      [matTooltipPosition]="'above'"
+      class="search"
+      (click)="clearSearchValue(input)">
+      close
+    </mat-icon>
+
+    <mat-icon color="primary" matSuffix>search</mat-icon>
+  </mat-form-field>
+</form>

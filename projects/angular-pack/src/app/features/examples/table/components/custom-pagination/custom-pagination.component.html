@@ -1,0 +1,9 @@
+<div #pagination class="content_detail__pagination nav" actpage="1">
+  <button mat-mini-fab color="primary" (click)="move('previous')" [disabled]="paginationPage === 1">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <a *ngFor="let page of pages; let i=index" class="nav_i" (click)="move((i+1)+'')">{{page}}</a>
+  <button mat-mini-fab color="primary" (click)="move('next')" [disabled]="paginationPage === pages.length">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

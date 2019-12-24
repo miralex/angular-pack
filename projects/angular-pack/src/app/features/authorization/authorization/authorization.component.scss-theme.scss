@@ -1,0 +1,11 @@
+@import '../../../../../../../node_modules/@angular/material/theming';
+
+@mixin app-authorization-component-theme($theme) {
+  app-authorization {
+    mat-card {
+      .mat-tab-label-active {
+        background: $light-focused;
+      }
+    }
+  }
+}

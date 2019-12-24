@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row" [ngClass]="routeAnimationsElements">
+    <div class="col-6">
+      <h1 class="main-heading">Angular CDK overlay</h1>
+    </div>
+
+    <div class="col-6">
+      <div>
+        <code>Angular CDK overlay</code>
+        {{ 'app.examples.overlay.description1' | translate }}
+        {{ 'app.examples.overlay.description2' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <mat-form-field class="ml-3">
+    <mat-select [placeholder]="'app.examples.overlay.placeholder' | translate" (selectionChange)="setContent($event)">
+      <mat-option *ngFor="let c of contents" [value]="c.content">
+        {{ c.type }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="wrapper">
+    <button #origin mat-raised-button color="primary"
+            (click)="show()">{{ 'app.examples.overlay.popover' | translate }}</button>
+  </div>
+
+  <ng-template #tpl let-close="close">
+    {{ 'app.examples.overlay.template.text' | translate }}
+    <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+      <button mat-button color="warn" (click)="close({id: 2})">{{ 'app.examples.overlay.close' | translate }}</button>
+    </div>
+  </ng-template>
+</div>

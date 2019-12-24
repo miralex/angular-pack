@@ -1,0 +1,51 @@
+@import "reset.scss-theme";
+
+
+@keyframes nav-in {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mat-paginator {
+  animation: nav-in 500ms ease both;
+}
+
+.icon-width {
+  max-width: 50px;
+}
+
+.mat-header-cell {
+  text-transform: uppercase;
+}
+
+.mat-row {
+  cursor: pointer;
+
+  &:hover {
+    background: $black-6-opacity;
+  }
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 0 5px;
+  margin-left: 5px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.change-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

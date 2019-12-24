@@ -1,0 +1,127 @@
+@import 'variables';
+
+@keyframes nav-in {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0;
+  z-index: 6;
+  animation: nav-in 500ms ease both;
+
+  &_i {
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 250ms;
+    text-transform: uppercase;
+    height: 40px;
+    min-width: 40px;
+    line-height: 38px;
+    padding: 0;
+    font-weight: 500;
+    letter-spacing: .03em;
+    display: none;
+    border-radius: 20px;
+
+    &:first-child,
+    &:last-child {
+      padding: 0 16px;
+      margin: 0 12px 6px;
+    }
+
+    &:last-child,
+    &:nth-child(2),
+    &:nth-last-child(2) {
+      display: inline-block;
+    }
+  }
+
+  &_i:hover {
+    cursor: pointer;
+    color: white;
+    line-height: 38px;
+    border-radius: 20px;
+  }
+
+  &:not([actpage="1"]) &_i:nth-child(1) {
+    display: inline-block;
+  }
+}
+
+@for $i from 1 through 101 {
+  .nav[actpage="#{$i}"] {
+    // 3 before
+    .nav_i:nth-child(#{$i - 2}):not(:first-child):not(:nth-child(2)) {
+      display: inline-block;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 50px;
+
+      &:after {
+        content: '...';
+        font-size: 18px;
+        margin-left: -6px;
+      }
+    }
+    // 2 before
+    .nav_i:nth-child(#{$i - 1}):not(:first-child) {
+      display: inline-block;
+    }
+    // before
+    .nav_i:nth-child(#{$i}):not(:first-child) {
+      display: inline-block;
+    }
+    // active
+    .nav_i:nth-child(#{$i + 1}) {
+      line-height: 34px;
+      border-radius: 20px;
+      border: 2px solid white;
+      display: inline-block;
+
+      + .nav_i:last-child {
+        display: none !important;
+      }
+    }
+    // next
+    .nav_i:nth-child(#{$i + 2}):not(:last-child) {
+      display: inline-block;
+    }
+    // 2 next
+    .nav_i:nth-child(#{$i + 3}):not(:last-child) {
+      display: inline-block;
+    }
+    // 3 next
+    .nav_i:nth-child(#{$i + 4}):not(:last-child):not(:nth-last-child(2)) {
+      display: inline-block;
+      pointer-events: none;
+      color: transparent;
+      border-color: transparent;
+      width: 50px;
+
+      &:after {
+        content: '...';
+        font-size: 18px;
+        margin-left: -6px;
+      }
+    }
+  }
+}
+
+.mat-mini-fab.mat-primary {
+  margin: 0 25px;
+}

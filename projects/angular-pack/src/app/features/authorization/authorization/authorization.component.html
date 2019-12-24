@@ -1,0 +1,121 @@
+<div class="wrapper">
+  <mat-card class="card-container">
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab [label]="'app.auth.sign-up' | translate">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-subtitle>{{ 'app.auth.sign-up.sub-title' | translate }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+              <form autocomplete="off" [formGroup]="formSignUp">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    appAutoFocus
+                    formControlName="firstName"
+                    maxlength="100"
+                    [placeholder]="('app.auth.form.placeholder1' | translate)"/>
+                  <mat-error *ngIf="formSignUp.get('firstName').invalid">
+                    {{ 'app.auth.form.error1' | translate }}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="lastName"
+                    maxlength="100"
+                    [placeholder]="('app.auth.form.placeholder2' | translate)"/>
+                  <mat-error *ngIf="formSignUp.get('lastName').invalid">
+                    {{ 'app.auth.form.error2' | translate }}
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="email"
+                    maxlength="100"
+                    [placeholder]="('app.auth.form.placeholder3' | translate)"/>
+                  <mat-error *ngIf="formSignUp.get('email').invalid">
+                    {{ 'app.auth.form.error3' | translate }}
+                  </mat-error>
+                </mat-form-field>
+
+                <app-verify-password
+                  [parentForm]="formSignUp"
+                  [icon]="'info'"
+                  [focusActivated]="false">
+                </app-verify-password>
+              </form>
+            </mat-card-content>
+
+            <mat-card-footer>
+              <a mat-flat-button>{{ 'app.auth.form.text1' | translate }} </a>
+
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="onLogin(formSignUp)">
+                {{ 'app.auth.sign-up' | translate }}
+              </button>
+            </mat-card-footer>
+          </mat-card>
+        </mat-tab>
+
+        <mat-tab [label]="'app.auth.sign-in' | translate">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-subtitle>{{ 'app.auth.sign-in.sub-title' | translate }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+              <form autocomplete="off" [formGroup]="formSignIn">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    appAutoFocus
+                    formControlName="email"
+                    maxlength="100"
+                    [placeholder]="('app.auth.form.placeholder3' | translate)"/>
+                  <mat-error *ngIf="formSignIn.get('email').invalid">
+                    Please enter a valid email address
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="password"
+                    formControlName="password"
+                    maxlength="100"
+                    [placeholder]="('app.auth.form.placeholder4' | translate)"/>
+                  <mat-error *ngIf="formSignIn.get('password').invalid">
+                    Please enter the password
+                  </mat-error>
+                </mat-form-field>
+              </form>
+            </mat-card-content>
+
+            <mat-card-footer>
+              <a mat-flat-button>{{ 'app.auth.form.text2' | translate }}</a>
+
+              <button
+                mat-flat-button
+                color="primary"
+                (click)="onLogin(formSignIn)">
+                {{ 'app.auth.sign-in' | translate }}
+              </button>
+            </mat-card-footer>
+          </mat-card>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,58 @@
+@import 'variables';
+
+@import '../../../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../../../node_modules/bootstrap/scss/bootstrap-grid';
+@import 'assets/styles/reset';
+
+@import '../../../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+@import './assets/themes/default-theme';
+@import './assets/themes/light-theme';
+@import './assets/themes/black-theme';
+@import './assets/themes/nature-theme';
+
+@import 'assets/styles/reset.scss-theme';
+@import './app/app/app-wrapper.component.scss-theme';
+@import './app/features/authorization/authorization/authorization.component.scss-theme';
+@import './app/features/about/about/about.component.scss-theme';
+@import './app/features/examples/notifications/components/notifications.component.scss-theme';
+@import './app/features/examples/todos/components/todos-container.component.scss-theme';
+@import './app/features/examples/theming/parent/parent.component.scss-theme';
+@import './app/features/examples/theming/child/child.component.scss-theme';
+@import './app/features/examples/examples/examples.component.scss-theme';
+@import './app/features/examples/table/components/custom-pagination/custom-pagination.component.scss-theme';
+
+@mixin custom-components-theme($theme) {
+  @include app-styles-reset-theme($theme);
+  @include app-authorization-component-theme($theme);
+  @include app-wrapper-component-theme($theme);
+  @include app-about-component-theme($theme);
+  @include app-notifications-component-theme($theme);
+  @include app-todos-container-component-theme($theme);
+  @include app-parent-component-theme($theme);
+  @include app-child-component-theme($theme);
+  @include app-examples-component-theme($theme);
+  @include app-pagination-component-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($app-theme);
+  @include custom-components-theme($app-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($app-light-theme);
+  @include custom-components-theme($app-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($app-black-theme);
+  @include custom-components-theme($app-black-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($app-nature-theme);
+  @include custom-components-theme($app-nature-theme);
+}
