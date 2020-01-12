@@ -1,6 +1,6 @@
 # Angular Pack
 
-## Goal
+## Goals
 
 The main goal of this project is to provide an up to date example of Angular application following all recent best practices in various areas like:
 
