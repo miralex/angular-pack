@@ -1,8 +1,8 @@
 # Angular Pack
 
-## Goals
+## Goal
 
-New text
+This project like a playground for Angular where you can familiar with code snippets. You can quickly download the project and start to familiar with code and also apply it to your projects.
 
 The main goal of this project is to provide an up to date example of Angular application following all recent best practices in various areas like:
 
@@ -39,6 +39,9 @@ Project is using [Travis CI](https://travis-ci.org/) for running linters and tes
 
 This project is a great match for junior and middle developers who want to familiarize themselves with recent technologies and also can add own simple features and enhance test coverage.
 
+Go to an online demo - [Live Demo]
+
+
 [Angular]: <https://angular.io/docs/ts/latest/>
 [Angular Material]: <https://material.angular.io/>
 [Angular Cli]: <https://cli.angular.io/>
@@ -47,3 +50,4 @@ This project is a great match for junior and middle developers who want to famil
 [RxJS]: <http://reactivex.io/rxjs/>
 [Typescript]:  <https://www.typescriptlang.org/docs/home.html>
 [I18n]: <http://www.ngx-translate.com/>
+[Live Demo]: <https://miralex.github.io/angular-pack/>
