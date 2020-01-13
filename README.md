@@ -1,6 +1,6 @@
 # Angular Pack
 
-## Goal
+## Goals
 
 This project like a playground for Angular where you can familiar with code snippets. You can quickly download the project and start to familiar with code and also apply it to your projects.
 
