@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, By, element } from 'protractor';
 
 export class TodosPage {
   navigateTo() {
@@ -6,14 +6,14 @@ export class TodosPage {
   }
 
   getInput() {
-    return element(by.name('todos'));
+    return element(By.name('todos'));
   }
 
   getAddTodoButton() {
-    return element(by.css('.btn-add'));
+    return element(By.css('.btn-add'));
   }
 
   getResults() {
-    return element.all(by.css('mat-card.todo'));
+    return element.all(By.css('mat-card.todo'));
   }
 }
