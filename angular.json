@@ -26,7 +26,8 @@
             "aot": false,
             "assets": [
               "projects/angular-pack/src/favicon.ico",
-              "projects/angular-pack/src/assets"
+              "projects/angular-pack/src/assets",
+              "projects/angular-pack/src/404.html"
             ],
             "styles": [
               "projects/angular-pack/src/styles.scss"
@@ -107,8 +108,7 @@
             "karmaConfig": "projects/angular-pack/karma.conf.js",
             "assets": [
               "projects/angular-pack/src/favicon.ico",
-              "projects/angular-pack/src/assets",
-              "projects/angular-pack/src/404.html"
+              "projects/angular-pack/src/assets"
             ],
             "styles": [
               "projects/angular-pack/src/styles.scss"
