@@ -15,7 +15,7 @@ The main goal of this project is to provide an up to date example of Angular app
 - Routing
 - Lazy-loading of feature modules
 - Testing of all the above mentioned concepts
-- Angular CLI configuration (prod build, budgets, …)
+- Angular CLI configuration (prod build, budgets, … )
 - Responsive design
 - Internationalization and localization
 
